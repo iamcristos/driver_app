@@ -20,6 +20,13 @@ class Driver extends CommonQuery {
   checkPlateNumber({ plateNumber }) {
     return this.findOne('plateNumber', plateNumber);
   }
+
+  validatePassword({ username, password }) {
+    return this.findOne('username', username).then((res) => {
+      const confirm = bcrypt.compareSync(password, res[0].password);
+      return confirm ? res[0] : null;
+    });
+  }
 }
 
 export default Driver;
