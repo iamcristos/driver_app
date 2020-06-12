@@ -1,7 +1,7 @@
 // Update with your config settings.
 
 module.exports = {
-  developement: {
+  development: {
     client: 'pg',
     connection: 'postgres://ajerylfr:Remlmfe91A6PNyIvcsAqauxZ3ZVPeEs2@rogue.db.elephantsql.com:5432/ajerylfr',
     // connection: {

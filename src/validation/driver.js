@@ -9,6 +9,13 @@ class DriverValidation {
       body('plateNumber').isLength({ min: 4 }),
     ];
   }
+
+  static login() {
+    return [
+      body('username').isLength({ min: 2 }),
+      body('password').isLength({ min: 5 }),
+    ];
+  }
 }
 
 export default DriverValidation;
