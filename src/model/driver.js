@@ -8,4 +8,4 @@ class Driver extends CommonQuery {
   }
 }
 
-export default new Driver('drivers');
+export default Driver;
