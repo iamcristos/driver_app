@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 import driverRoute from './routes/driver';
+import associationRoute from './routes/association';
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/v1/', driverRoute);
+app.use('/api/v1/', [driverRoute, associationRoute]);
 
 app.all('*', (req, res) => {
   res.status(404).json({

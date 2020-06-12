@@ -8,7 +8,9 @@
     "build": "babel src --out-dir dist",
     "start:dev": "nodemon --exec babel-node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migration": "npx knex migrate:make"
+    "migration": "npx knex migrate:make",
+    "migrate:up": "npx knex migrate:up",
+    "migrate:down": "npx knex migrate:down"
   },
   "repository": {
     "type": "git",

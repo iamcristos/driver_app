@@ -23,8 +23,11 @@ class Driver extends CommonQuery {
 
   validatePassword({ username, password }) {
     return this.findOne('username', username).then((res) => {
-      const confirm = bcrypt.compareSync(password, res[0].password);
-      return confirm ? res[0] : null;
+      if (res) {
+        const confirm = bcrypt.compareSync(password, res[0].password);
+        return confirm ? res[0] : null;
+      }
+      return null;
     });
   }
 }
