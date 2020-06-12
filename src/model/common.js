@@ -22,6 +22,12 @@ class Driver {
       .returning('*')
       .then((res) => (res.length ? res : 'null'));
   }
+
+  findOne(field, item) {
+    return this.db.where(field, item)
+      .returning('*')
+      .then((ids) => (ids.length ? ids : null));
+  }
 }
 
 export default Driver;

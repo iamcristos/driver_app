@@ -3,11 +3,12 @@
 module.exports = {
   developement: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
+    connection: 'postgres://ajerylfr:Remlmfe91A6PNyIvcsAqauxZ3ZVPeEs2@rogue.db.elephantsql.com:5432/ajerylfr',
+    // connection: {
+    //   database: 'my_db',
+    //   user: 'username',
+    //   password: 'password',
+    // },
     pool: {
       min: 2,
       max: 10,
