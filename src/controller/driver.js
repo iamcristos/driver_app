@@ -7,7 +7,7 @@ class Driver {
       const body = JSON.parse(JSON.stringify(req.body));
       const driver = await Models().driver.create(body);
       const token = jwt.generateToken(driver);
-      return res.status(200).json({ message: 'Driver created succesfully', driver, token });
+      return res.status(201).json({ message: 'Driver created succesfully', driver, token });
     } catch (error) {
       return next(error);
     }
