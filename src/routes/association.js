@@ -11,7 +11,4 @@ route.post('/association/:id', [Validation.association.create(), Validation.vali
   [Middleware.association.create],
   Controller.create);
 
-// route.post('/login', [Validation.driver.login(), Validation.validate],
-//   Controller.login);
-
 export default route;
