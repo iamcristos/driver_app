@@ -7,7 +7,7 @@ async function Contribution() {
     const contributions = await Models().contribution.getAll();
     if (contributions) {
       contributions.forEach(async (contribution) => {
-        const newBalance = calculateInterest(contribution.currentBalance);
+        const newBalance = +calculateInterest(contribution.currentBalance);
         const oldBalance = contribution.currentBalance;
         const { driverId } = contribution;
         await Models().contribution.addContribution({ newBalance, oldBalance, driverId });

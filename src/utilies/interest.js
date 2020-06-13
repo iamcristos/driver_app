@@ -1,5 +1,5 @@
 function calculateInterest(amount) {
-  const interest = 150 / amount;
+  const interest = 1.5 / amount;
   return amount + interest;
 }
 
