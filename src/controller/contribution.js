@@ -29,7 +29,7 @@ class Association {
   static async getDaily(req, res, next) {
     try {
       const driverId = req.params.id;
-      const contribution = await Models().contribution.findById('driverId', driverId);
+      const contribution = await Models().contribution.findOne('driverId', driverId);
       if (!contribution) return res.status(404).json({ message: 'no driver account found' });
       return res.status(200).json(contribution);
     } catch (error) {
