@@ -18,9 +18,10 @@ class Association {
       const driverId = req.params.id;
       const [history] = req.contribution;
       const newBalance = +body.amount + history.currentBalance;
-      const update = { newBalance, oldBalance: history.currentBalance, driverId };
-      const contribution = await Models().contribution.addContribution(update);
-      return res.status(200).json(contribution);
+      const oldBalance = history.currentBalance;
+      const update = { newBalance, oldBalance, driverId };
+      await Models().contribution.addContribution(update);
+      return res.status(200).json({ message: 'daily contribution added succesfully', newBalance, oldBalance });
     } catch (error) {
       return next(error);
     }
