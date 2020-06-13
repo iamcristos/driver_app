@@ -8,7 +8,7 @@ class Driver {
   findById(id) {
     return this.db.where({ id })
       .returning('*')
-      .then((ids) => (ids.length ? ids : null));
+      .then((ids) => (ids.length ? ids[0] : null));
   }
 
   create(body) {

@@ -8,7 +8,7 @@ class Contribution {
       if (!contribution) return next();
       return res.status(400).json({ message: 'driver already have an account' });
     } catch (error) {
-      return next(error.message);
+      return next(error);
     }
   }
 
@@ -22,7 +22,7 @@ class Contribution {
       req.contribution = contribution;
       return next();
     } catch (error) {
-      return next(error.message);
+      return next(error);
     }
   }
 }

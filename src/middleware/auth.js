@@ -5,12 +5,12 @@ class Auth {
   static async protectedRoute(req, res, next) {
     try {
       const id = await jwt.validateToken(req.headers.authorization, res);
-      const [user] = await Models().driver.findById(id);
+      const user = await Models().driver.findById(id);
       if (!user) return res.status(401).send('invalid token');
       req.authorizeUser = user;
       return next();
     } catch (error) {
-      return next(error.message);
+      return next(error);
     }
   }
 

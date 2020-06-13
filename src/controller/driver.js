@@ -21,7 +21,7 @@ class Driver {
       const token = jwt.generateToken(driver);
       return res.status(200).json({ driver, token });
     } catch (error) {
-      return next(error.message);
+      return next(error);
     }
   }
 }

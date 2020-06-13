@@ -7,10 +7,12 @@
     "start": "npm run build && node dist/index.js",
     "build": "babel src --out-dir dist",
     "start:dev": "nodemon --exec babel-node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test npm run migrate:up && jest --verbose --detectOpenHandles",
     "migration": "npx knex migrate:make",
     "migrate:up": "npx knex migrate:up",
-    "migrate:down": "npx knex migrate:down"
+    "migrate:down": "npx knex migrate:down",
+    "test-coverage": "jest --coverage",
+    "coverage": " nyc npm run pretest && cross-env DB_TEST=testing nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
