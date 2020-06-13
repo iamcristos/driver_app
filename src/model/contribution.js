@@ -22,6 +22,10 @@ class Contribution extends CommonQuery {
         .then((resp) => resp);
     });
   }
+
+  getAll() {
+    return this.db.select('*').then((res) => (res.length ? res : null));
+  }
 }
 
 export default Contribution;
