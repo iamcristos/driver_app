@@ -3,7 +3,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://ajerylfr:Remlmfe91A6PNyIvcsAqauxZ3ZVPeEs2@rogue.db.elephantsql.com:5432/ajerylfr',
+    connection: 'postgres://kouksxuf:u2t1IdI5jRVXrzT2FwFBT_1NulW4QecW@packy.db.elephantsql.com:5432/kouksxuf',
     // connection: {
     //   database: 'my_db',
     //   user: 'username',

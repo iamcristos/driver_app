@@ -9,7 +9,9 @@ class Contribution extends CommonQuery {
   }
 
   addContribution({ newBalance, oldBalance, driverId }) {
+      console.log('enter here', newBalance, oldBalance, driverId);
     return knex.transaction((trx) => {
+        console.log('hello there')
       this.db.transacting(trx)
         .where('driverId', driverId)
         .update({ currentBalance: newBalance, previousBalance: oldBalance })

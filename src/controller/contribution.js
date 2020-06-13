@@ -16,7 +16,7 @@ class Association {
     try {
       const body = JSON.parse(JSON.stringify(req.body));
       const driverId = req.params.id;
-      const history = req.contribution;
+      const [history] = req.contribution;
       const newBalance = body.amount + history.currentBalance;
       const update = { newBalance, oldBalance: history.previousBalance, driverId };
       const contribution = await Models().contribution.addContribution(update);

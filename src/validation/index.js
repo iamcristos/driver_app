@@ -2,6 +2,7 @@ import { validationResult } from 'express-validator';
 
 import driver from './driver';
 import association from './association';
+import contribution from './contibution';
 
 function validate(req, res, next) {
   const errors = validationResult(req);
@@ -17,7 +18,7 @@ function validate(req, res, next) {
 }
 
 const validation = {
-  driver, validate, association,
+  driver, validate, association, contribution,
 };
 
 export default validation;

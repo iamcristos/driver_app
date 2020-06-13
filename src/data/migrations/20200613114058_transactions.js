@@ -8,7 +8,6 @@ exports.up = function (knex) {
     })
       .defaultTo(knex.fn.now(6));
     tbl.integer('contributionId')
-      .unique()
       .unsigned()
       .references('id')
       .inTable('contributions')
