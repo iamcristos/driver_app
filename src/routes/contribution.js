@@ -11,4 +11,5 @@ route.post('/association/:id', [Validation.association.create(), Validation.vali
   [Middleware.association.create],
   Controller.create);
 
+
 export default route;
