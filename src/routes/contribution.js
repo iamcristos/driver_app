@@ -14,4 +14,7 @@ route.post('/contribution/:id', [Validation.contribution.create(), Validation.va
 route.patch('/contributions/:id', [Validation.contribution.dailyContribution(), Validation.validate],
   [Auth.protectedRoute, Auth.restrictedRoute], [Middleware.contribution.find],
   Controller.dailyContribution);
+
+route.get('/contribution/:id', [Auth.protectedRoute, Auth.restrictedRoute], Controller.getDaily);
+
 export default route;
