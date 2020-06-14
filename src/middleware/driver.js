@@ -19,7 +19,7 @@ class Driver {
       }
       return next();
     } catch (error) {
-      return next(error.message);
+      return next(error);
     }
   }
 }

@@ -11,7 +11,7 @@ class Contribution extends CommonQuery {
     return knex.transaction((trx) => {
       this.db.transacting(trx)
         .where('driverId', driverId)
-        .update({ currentBalance: newBalance, previousBalance: oldBalance })
+        .update({ currentBalance: +newBalance, previousBalance: oldBalance })
         .returning('id')
         .then(([res]) => {
           const body = { amount: newBalance - oldBalance, contributionId: res };
@@ -21,6 +21,10 @@ class Contribution extends CommonQuery {
         .catch(trx.rollback)
         .then((resp) => resp);
     });
+  }
+
+  getAll() {
+    return this.db.select('*').then((res) => (res.length ? res : null));
   }
 }
 

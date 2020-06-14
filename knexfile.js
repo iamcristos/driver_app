@@ -1,14 +1,15 @@
-// Update with your config settings.
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://kouksxuf:u2t1IdI5jRVXrzT2FwFBT_1NulW4QecW@packy.db.elephantsql.com:5432/kouksxuf',
-    // connection: {
-    //   database: 'my_db',
-    //   user: 'username',
-    //   password: 'password',
-    // },
+    connection: {
+      database: 'template1',
+      user: 'lambda',
+      password: 'password',
+    },
     pool: {
       min: 2,
       max: 10,
@@ -21,12 +22,11 @@ module.exports = {
   },
   test: {
     client: 'pg',
-    connection: 'postgres://fqgiwvwd:f7niilY4dC-TtefeS3_PDkmgCMQUncvr@rogue.db.elephantsql.com:5432/fqgiwvwd',
-    // connection: {
-    //   database: 'my_db',
-    //   user: 'username',
-    //   password: 'password',
-    // },
+    connection: {
+      database: 'test',
+      user: 'lambda',
+      password: 'password',
+    },
     pool: {
       min: 2,
       max: 10,
@@ -40,11 +40,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10,

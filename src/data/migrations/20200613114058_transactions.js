@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('transactions', (tbl) => {
     tbl.increments();
-    tbl.integer('amount')
+    tbl.float('amount')
       .notNullable();
     tbl.timestamp('createdAt', {
       precision: 6,
