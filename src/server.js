@@ -20,6 +20,10 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/v1/', [driverRoute, associationRoute, contributionRoute]);
 
+app.get('/', (req, res) => {
+  res.status(200).send('welcome to driver app');
+});
+
 app.all('*', (req, res) => {
   res.status(404).json({
     message: "This endpoint doesn't exists",
