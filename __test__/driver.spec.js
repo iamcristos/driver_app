@@ -1,5 +1,4 @@
 import request from './server';
-// import jwt from '../src/utilies/jwt';
 
 const driver = {
   username: 'user', password: 'password', fullName: 'fullname', plateNumber: 12345,
