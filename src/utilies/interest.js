@@ -1,6 +1,8 @@
+import secret from '../config/secret';
+
 function calculateInterest(amount) {
-  const interest = 1.5 / amount;
-  return amount + interest;
+  const interest = (secret.RATE * amount) / 100;
+  return parseFloat(amount) + interest;
 }
 
 export default calculateInterest;

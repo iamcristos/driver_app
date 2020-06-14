@@ -7,10 +7,10 @@
     "start": "npm run build && node dist/index.js",
     "build": "babel src --out-dir dist",
     "start:dev": "nodemon --exec babel-node src/index.js",
-    "test": "cross-env NODE_ENV=test npm run migrate:up && jest --verbose --forceExit",
+    "test": "cross-env NODE_ENV=test npm run migrate:up && jest --verbose --forceExit --runInBand",
     "migration": "npx knex migrate:make",
-    "drop:db": " npx knex migrate:rollback --all",
-    "migrate:up": "npx knex migrate:latest",
+    "drop:db": " npx knex migrate:rollback",
+    "migrate:up": "npm run drop:db && npx knex migrate:latest",
     "migrate:down": "npx knex migrate:down",
     "test-coverage": "jest --coverage",
     "coverage": " nyc npm run pretest && cross-env DB_TEST=testing nyc report --reporter=text-lcov | coveralls"
