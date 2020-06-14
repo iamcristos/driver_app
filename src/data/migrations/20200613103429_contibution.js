@@ -1,9 +1,9 @@
 exports.up = function (knex) {
   return knex.schema.createTable('contributions', (tbl) => {
     tbl.increments();
-    tbl.integer('previousBalance')
+    tbl.float('previousBalance')
       .defaultTo(0.00);
-    tbl.integer('currentBalance')
+    tbl.float('currentBalance')
       .defaultTo(0.00);
     tbl.integer('driverId')
       .unique()
