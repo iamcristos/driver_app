@@ -34,7 +34,7 @@ module.exports = {
     useNullAsDefault: true,
     migrations: {
       tableName: 'knex_migrations',
-      directory: './dist/data/migrations',
+      directory: './src/data/migrations',
     },
   },
 
@@ -47,6 +47,7 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
+      directory: './dist/data/migrations',
     },
   },
 
