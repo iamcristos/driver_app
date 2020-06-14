@@ -1,5 +1,6 @@
 import app from './server';
-// import interestScheduler from './jobs/contribution';
+// eslint-disable-next-line no-unused-vars
+import interestScheduler from './jobs/contribution';
 
 const PORT = process.env.PORT || 7000;
 

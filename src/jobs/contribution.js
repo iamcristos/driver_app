@@ -19,7 +19,7 @@ async function Contribution() {
   }
 }
 
-const weeklyInterest = schedule.scheduleJob('* * * * * 7', async (fireDate) => {
+const weeklyInterest = schedule.scheduleJob('5 8 * * 0', async (fireDate) => {
   try {
     console.log(`This job was supposed to run at ${fireDate}, but actually ran at ${new Date()}`);
     await Contribution();
