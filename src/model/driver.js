@@ -25,7 +25,7 @@ class Driver extends CommonQuery {
     return this.findOne('username', username).then((res) => {
       if (res) {
         const confirm = bcrypt.compareSync(password, res[0].password);
-        return confirm ? res[0] : null;
+        return confirm ? res : null;
       }
       return null;
     });

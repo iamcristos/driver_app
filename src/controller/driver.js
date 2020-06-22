@@ -16,6 +16,7 @@ class Driver {
   static async login(req, res, next) {
     try {
       const body = JSON.parse(JSON.stringify(req.body));
+      console.log(body);
       const driver = await Models().driver.validatePassword(body);
       if (!driver) return res.status(401).json({ message: 'invalid credentials' });
       const token = jwt.generateToken(driver);
