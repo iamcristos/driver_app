@@ -8,6 +8,7 @@ class Association {
       const association = await Models().association.create({ ...body, driverId });
       return res.status(201).json(association);
     } catch (error) {
+      // console.error(error);
       return next(error.message);
     }
   }

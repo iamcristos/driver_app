@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import secret from '../config/secret';
 
-function generateToken(driver) {
+function generateToken([driver]) {
   // eslint-disable-next-line no-underscore-dangle
   const token = jwt.sign({ data: driver.id }, secret.JWT_SECRET, { expiresIn: '1d' });
   return token;
